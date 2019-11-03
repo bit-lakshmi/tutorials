@@ -1,0 +1,42 @@
+#include<iostream>
+#include<stdio.h>
+#include<conio.h>
+
+class second;
+class first{
+  
+  int a;   
+  public:
+    friend class second;
+    void input(second &,int,int);
+};
+
+class second{
+    
+    int b;
+    public:     
+    friend class first;
+        void display(first obj){
+            std::cout << "a = " << obj.a <<"\n";
+            std::cout << "b = " << b << "\n";
+        }
+};
+
+ void first::input(second &obj, int f, int g){
+        a = f;
+        obj.b = g;
+    }
+    
+
+int main(){
+    first obj1;
+    first obj3;
+    second obj2,obj4;
+    
+    obj1.input(obj2, 5,6);
+    obj2.display(obj1);
+    
+    
+    obj3.input(obj4, 20,24);
+    obj4.display(obj3);
+}
