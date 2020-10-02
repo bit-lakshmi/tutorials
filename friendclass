@@ -29,6 +29,7 @@ class second{
     
 
 int main(){
+    clrscr();
     first obj1;
     first obj3;
     second obj2,obj4;
